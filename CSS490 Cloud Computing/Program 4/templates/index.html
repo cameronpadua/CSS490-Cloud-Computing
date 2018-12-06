@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Cats Everywhere!</title>	
+
+    <link     href='http://fonts.googleapis.com/css?family=Sintony:400,700'     rel='stylesheet' type='text/css'>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='stylesheets/index.css') }}">
+    
+
+  </head>  
+
+  <body>
+  	
+    <div id="banner">
+		<h1>{{name}}</h1>
+		<p class="lead">Feel free to make yourself at home!</p>
+		<form action="/load" method="post">
+			<input type="submit" value="Load Data"></input>
+		</form>
+		<form action="/clear" method="post">
+			<input type="submit" value="Clear Data"></input>
+		</form>
+		<form action="/query" method="post">
+			<label>First Name</label>
+			<input type="text" name="firstName"></input>
+			<label>Last Name</label>
+			<input type="text" name="lastName"></input>
+			<input type="submit" value="Query"></input>
+		</form>
+		<p class="lead">{{query}}</p>
+    </div>
+  </body>
+</html>
